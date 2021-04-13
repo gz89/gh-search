@@ -1,14 +1,13 @@
 import axios from 'axios'
 
 export const endpoint = 'https://api.github.com/graphql'
-const accessToken = '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'
 
 const apiClient = axios.create({
   baseURL: endpoint,
   headers: {
     Accept: 'application/json',
     'Content-Type': 'application/json',
-    authorization: `bearer ${accessToken}`,
+    authorization: `bearer ${process.env.VUE_APP_ACCESS_TOKEN}`,
   },
 })
 
